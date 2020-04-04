@@ -1,26 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Profile } from './components/Home/Profile'
+import { ViewCats } from './components/Home/ViewCats'
+import { AboutCat } from './components/Home/AboutCat'
+import { Home } from './components/Home'
+import { Routers } from './components/Routers'
+import { MsgContext } from './contexts/MsgContext'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+export const App = () => (
+    <MsgContext.Provider value={'Hola a todos!!'}>
+        <Routers/>
+    </MsgContext.Provider>
+)

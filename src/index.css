@@ -33,6 +33,7 @@ body{
 .about-cat{
 	flex: 9;
 	background: #f1f1f1;
+	z-index: 1000;
   }
   
   .interest-container{

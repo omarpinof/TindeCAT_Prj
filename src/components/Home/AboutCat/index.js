@@ -3,8 +3,9 @@ import { Preferences } from './components/Preferences';
 import { Interests } from './components/Interests';
 import { Matches } from './components/Matches';
 import { MsgContext } from '../../../contexts/MsgContext';
+import { AboutContext } from '../../../contexts/AboutContext';
 
-const ShowAboutPanel = {
+const showAboutPanel = {
     display: 'block'
 }
 
@@ -14,15 +15,12 @@ const hideAboutPanel = {
 
 export const AboutCat = () => {
 
-    const message = useContext(MsgContext)
-
-    
+    const {aboutPanel} = useContext(AboutContext)
 
     return (
-        <div className= "about-cat">
+        <div style ={aboutPanel ? showAboutPanel: hideAboutPanel} className= "about-cat">
             About cat
             <br></br>
-            {message}
             <Interests />
         </div>
     )

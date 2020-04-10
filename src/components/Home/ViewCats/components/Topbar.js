@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Logo from '../../../../img/Logo_color.svg'
 import { TopbarIcon } from './Topbar-icon';
 import { ProfileContext } from '../../../../contexts/ProfileContext';
+import { AboutContext } from '../../../../contexts/AboutContext';
 
 const logoStyle = {
     flex: 1,
@@ -11,9 +12,14 @@ const logoStyle = {
 export const Topbar = () => {
     
     const {profilePanel, setProfilePanel} = useContext(ProfileContext)
+    const {aboutPanel, setAboutPanel} = useContext(AboutContext)
 
     const profilePanelHandler = () => {
         setProfilePanel(!profilePanel)
+    }
+
+    const aboutPanelHandler = () => {
+        setAboutPanel(!aboutPanel)
     }
     
     return (
@@ -25,7 +31,10 @@ export const Topbar = () => {
         <div style={logoStyle}>
             <img width="200" src={Logo} />
         </div>
-        <TopbarIcon badge='6' name="notifications" />  
+        <TopbarIcon badge='6' name="notifications" /> 
+        <div className="show-mobile">
+            <TopbarIcon onPress={aboutPanelHandler} name="filter-sharp" />
+        </div>
     </div>
 )
     }

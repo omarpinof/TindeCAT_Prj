@@ -4,17 +4,17 @@ const initialState = false;
 
 export const AboutContext = createContext(initialState);
 
-export const ProfileContextStore = ({children}) => {
-    const[profilePanel, setProfilePanel] = useState(initialState)
+export const AboutContextStore = ({children}) => {
+    const[aboutPanel, setAboutPanel] = useState(initialState)
 
     useEffect(() => {
         const showState = window.innerWidth > 768
-        setProfilePanel(showState)
+        setAboutPanel(showState)
     }, [])
 
     return (
-        <ProfileContext.Provider value={{profilePanel, setProfilePanel}}>
+        <AboutContext.Provider value={{aboutPanel, setAboutPanel}}>
             {children}
-        </ProfileContext.Provider>
+        </AboutContext.Provider>
     )
 }

@@ -18,7 +18,7 @@ export const Profile = () => {
 
     return (
         <div style ={profilePanel ? showProfilePanel: hideProfilePanel} className="profile">
-            {profilePanel ? 'Mostrar' : 'Ocultar'}
+            {/*profilePanel ? 'Mostrar' : 'Ocultar'*/}
             <Avatar />
             <Bio />
             <Menu />

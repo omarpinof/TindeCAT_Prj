@@ -37,7 +37,7 @@ body{
   }
   
   .interest-container{
-	margin: 30px 10px;
+	margin: 50px 10px;
   }
   .interest-container h3{
 	font-weight: 300;
@@ -259,7 +259,7 @@ body{
 	font-family: 'Lato';
 	color: #333;
   }
-  .input-custom input {
+  .input-custom input, .input-custom textarea {
 	width: 100%;
 	background: #f2f2f2;
 	padding: 6px;
@@ -293,6 +293,22 @@ body{
 	margin-left: 15px;
 	font-weight: bold;
 	color: #9e3bec;
+  }
+
+  .divider {
+	  width: 5px;
+	  height: 5px;
+	  margin: 0	15px;
+  }
+
+  .form-preferences {
+	  font-family: 'Lato';
+	  font-size: 1.1em;
+	  color: #333333;
+  }
+
+  .preferences-ages-container {
+	  margin: 15px 30px;
   }
 
 .show-mobile{

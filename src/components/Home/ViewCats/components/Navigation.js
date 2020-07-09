@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect,useContext} from 'react'
 import { NavigationIcon } from './Navigation-icon'
 import { Couple } from './Couple'
 import { HTTP_CONSTANTS } from '../../../../config/http-constants'
 import { requestHttp } from '../../../../config/http-server'
 //import {CAT_LIST} from '../../../../data/db'
+import {CatContext} from './../../../../contexts/CatContext'
 
 export const Navigation = () => {
 
@@ -12,6 +13,8 @@ export const Navigation = () => {
   const[cat, setCat] = useState({})
   const[indexCat, setIndexCat] = useState(-1)
   const[loading, setLoading] = useState(true)
+  const {catInteraction, setCatInteraction,reloadCats,setReloadCats} = useContext(CatContext)
+
 
   const getCatList = async () => {
     try {
@@ -27,6 +30,16 @@ export const Navigation = () => {
       console.log(err)
     }
   }
+
+  useEffect (() => {
+
+    if(reloadCats){
+      getCatList()
+    }
+    setReloadCats(false)
+    return () => {}
+
+  }, [reloadCats])
 
   const goBack = () => {
       console.log('go back')
@@ -52,6 +65,7 @@ export const Navigation = () => {
   useEffect( () => {
     if (catList.length > 0) {
       setCat(catList[indexCat])
+      setCatInteraction(catList[indexCat]._id)
       setLoading(false)
       //console.log('Cat List: ', catList)
     }

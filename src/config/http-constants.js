@@ -5,5 +5,7 @@ export const HTTP_CONSTANTS = {
     autologin: '/cats/autologin',
     interests: '/cats/getAll',
     updatePreferences: '/cats/preferences',
-    catList: '/cats/'
+    catList: '/cats/',
+    liked: '/cats/Liked',
+    unliked: '/cats/Unliked'
 }

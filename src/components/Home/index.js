@@ -48,7 +48,7 @@ export const Home = () => {
                     ? <>
                     <Profile bio={cat.bio} nick={cat.nick} image={cat.image}/>
                     <ViewCats />
-                    {/*<AboutCat interest={ cat.interests } preferences={ cat.preferences } />*/}
+                    <AboutCat interest={ cat.interests } preferences={ cat.preferences } />
                     </>
                     : <p>Loading app...</p>
                 } 

@@ -70,7 +70,7 @@ export const Navigation = () => {
   }, [])
 
   useEffect( () => {
-    console.log('Cat List: ', catList)
+    //console.log('Cat List: ', catList)
     if (catList && catList.length > 0) {
       setCat(catList[indexCat])
       setCatInteraction(catList[indexCat]._id)

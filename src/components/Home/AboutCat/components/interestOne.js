@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const fillStyle = {
     background: '#07ABA0',
@@ -6,8 +6,8 @@ const fillStyle = {
     color: '#fff'
 }
 
-export const InterestOne = ({name = '...', status = false}) => (
-    <div style={status ? fillStyle : {} } className="interest-one">
-        {name}
+export const InterestOne = ({ name = '...', status = false }) => (
+    <div style={ status ? fillStyle: null } className="interest-one">
+        { name }
     </div>
 )

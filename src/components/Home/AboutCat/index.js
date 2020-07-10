@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Preferences } from './components/Preferences';
-import { Interests } from './components/Interests';
+import { Interest } from './components/Interests';
 import { Matches } from './components/Matches';
 import { MsgContext } from '../../../contexts/MsgContext';
 import { AboutContext } from '../../../contexts/AboutContext';
@@ -58,10 +58,10 @@ export const AboutCat = ({ preferences, interest }) => {
                 preferences:preferencesUpdated
             }
             const response = await requestHttp('put', endpoint, bodyData)
-            console.log('')
+            console.log(response)
 
         } catch (err) {
-            console.log('Error:', err)
+            console.error('Error:', err)
         }
     }
 
@@ -71,7 +71,7 @@ export const AboutCat = ({ preferences, interest }) => {
             <br></br>
             <Preferences onChange={ prefChangedHandler } gender={ preferences.gender } />
             <PreferencesAges notifyChange={ prefAgesChangedHandler } ageMax={ preferences.ageMax } ageMin={ preferences.ageMin } />
-            <Interests interestCat={ interest } />
+            <Interest interestCat={ interest } />
         </div>
     )
 }

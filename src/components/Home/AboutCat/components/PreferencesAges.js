@@ -24,7 +24,5 @@ export const PreferencesAges = ({ ageMin = 3, ageMax = 10, notifyChange }) => {
                 onChange={ onChangeHandler } min={1} max={20}
                 defaultValue={[ageMin, ageMax]} tipFormatter={value => `${value} age`} />
         </div>
-    )
-
-    
+    )   
 }

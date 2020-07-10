@@ -3,7 +3,7 @@ export const HTTP_CONSTANTS = {
     register: '/cats/signup',
     login: '/cats/login',
     autologin: '/cats/autologin',
-    interests: '/cats/getAll',
+    interests: '/interest/',
     updatePreferences: '/cats/preferences',
     catList: '/cats/',
     liked: '/cats/Liked',

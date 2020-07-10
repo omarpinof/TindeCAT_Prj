@@ -34,9 +34,16 @@ export const Navigation = () => {
   useEffect (() => {
 
     if(reloadCats){
-      getCatList()
+      setReloadCats(false);
+      const newCatList = catList.filter((_, key) => key != indexCat )
+      setCatList([...newCatList])
+      if (newCatList.length > 0) {
+        goNext()
+      } else {
+        setLoading(true)
+      }
     }
-    setReloadCats(false)
+    
     return () => {}
 
   }, [reloadCats])
@@ -63,11 +70,11 @@ export const Navigation = () => {
   }, [])
 
   useEffect( () => {
-    if (catList.length > 0) {
+    console.log('Cat List: ', catList)
+    if (catList && catList.length > 0) {
       setCat(catList[indexCat])
       setCatInteraction(catList[indexCat]._id)
       setLoading(false)
-      //console.log('Cat List: ', catList)
     }
     return () => {
         // Puede estar vacío

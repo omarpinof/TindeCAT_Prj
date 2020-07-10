@@ -6,13 +6,13 @@ import { requestHttp } from '../../../../config/http-server'
 
 export const Reactions = () =>{
 
-    const {catInteraction, setCatInteraction,setReloadCats} = useContext(CatContext)
+    const {catInteraction, setCatInteraction, setReloadCats} = useContext(CatContext)
     console.log(catInteraction)
 
     const likedCat = async() => {
         try{
             const endpoint = HTTP_CONSTANTS.liked
-            const data = {catIdLiked:catInteraction}
+            const data = {catIdLiked: catInteraction}
             const response = await requestHttp('post',endpoint,data)
             console.log(response)
             setReloadCats(true)
